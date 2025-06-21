@@ -34,16 +34,21 @@ export const FooterSection = ({ socialLinks }) => {
               </Text>
             </div>
 
-            <Button className="flex w-full max-w-[200px] h-12 sm:h-14 items-center justify-center gap-2 px-3 py-2 bg-[#3d46c9] rounded-[999px] text-white hover:bg-[#3d46c9]/90 transition-colors">
-              <Icon
-                src="/image/sms.png"
-                alt="Message icon"
-                size="md"
-                className="w-5 h-5 sm:w-6 sm:h-6"
-              />
-              <span className="w-fit text-sm sm:text-base font-['Plus_Jakarta_Sans',Helvetica] font-normal text-center tracking-[0] leading-normal">
-                Get in Touch!
-              </span>
+            <Button
+              asChild
+              className="flex w-full max-w-[200px] h-12 sm:h-14 items-center justify-center gap-2 px-3 py-2 bg-[#3d46c9] rounded-[999px] text-white hover:bg-[#3d46c9]/90 transition-colors"
+            >
+              <a href="mailto:syahrul.uix@gmail.com">
+                <Icon
+                  src="/image/sms.png"
+                  alt="Message icon"
+                  size="md"
+                  className="w-5 h-5 sm:w-6 sm:h-6"
+                />
+                <span className="w-fit text-sm sm:text-base font-['Plus_Jakarta_Sans',Helvetica] font-normal text-center tracking-[0] leading-normal">
+                  Get in Touch!
+                </span>
+              </a>
             </Button>
           </div>
 

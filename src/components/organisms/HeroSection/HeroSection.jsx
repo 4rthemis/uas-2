@@ -87,8 +87,17 @@ export const HeroSection = ({
             {personalInfo.description}
           </Text>
 
-          <Button className="w-32 sm:w-40 h-10 sm:h-12 bg-[#3d46c9] rounded-[999px] text-sm sm:text-base [font-family:'Plus_Jakarta_Sans',Helvetica] font-normal text-white hover:bg-[#3d46c9]/90 transition-colors">
-            Download CV
+          <Button
+            asChild
+            className="w-32 sm:w-40 h-10 sm:h-12 bg-[#3d46c9] rounded-[999px] text-sm sm:text-base [font-family:'Plus_Jakarta_Sans',Helvetica] font-normal text-white hover:bg-[#3d46c9]/90 transition-colors"
+          >
+            <a
+              href="https://drive.google.com/file/d/1VpQ4Gbl3BoBldT7QHXudLIJ4pFzxZqqw/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Download CV
+            </a>
           </Button>
         </div>
       </div>
