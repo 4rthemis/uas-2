@@ -1,4 +1,3 @@
-import React from "react";
 import { Button } from "../../ui/button";
 import { Separator } from "../../ui/separator";
 import { Text } from "../../atoms/Text/Text";
@@ -55,17 +54,20 @@ export const FooterSection = ({ socialLinks }) => {
           {/* Social Links */}
           <div className="flex items-center justify-center gap-4 w-full max-w-[216px]">
             {socialLinks.map((link, index) => (
-              <div
+              <a
                 key={link.id}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={link.name}
                 className={`relative cursor-pointer hover:scale-110 transition-transform ${
-                  index === 2 ? "w-8 h-[30px]" : "w-8 h-8"
+                  index === 3 ? "w-8 h-[30px]" : "w-8 h-8"
                 }`}
               >
-                {index === 2 ? (
+                {index === 3 ? (
                   <div
                     className="relative w-[30px] h-[29px] top-px left-px bg-[url(/linkedin.svg)] bg-[100%_100%]"
-                    aria-label={link.name}
-                    role="button"
+                    role="img"
                   />
                 ) : (
                   <Icon
@@ -74,7 +76,7 @@ export const FooterSection = ({ socialLinks }) => {
                     className={`absolute ${link.iconClass}`}
                   />
                 )}
-              </div>
+              </a>
             ))}
           </div>
 

@@ -1,4 +1,3 @@
-import React from "react";
 import { Button } from "../../ui/button";
 import { Card, CardContent } from "../../ui/card";
 import { Text } from "../../atoms/Text/Text";
@@ -14,6 +13,7 @@ export const HeroSection = ({
   return (
     <section
       id="home"
+      data-section-id="home"
       className="flex flex-col items-center justify-center gap-8 md:gap-16 px-4 sm:px-8 md:px-16 lg:px-[120px] pt-24 md:pt-32 relative self-stretch w-full"
     >
       {/* Navigation Bar */}
@@ -99,31 +99,6 @@ export const HeroSection = ({
               Download CV
             </a>
           </Button>
-        </div>
-      </div>
-
-      {/* Designer Roles Banner */}
-      <div className="w-full overflow-x-hidden bg-[linear-gradient(0deg,rgba(36,37,40,1)_32%,rgba(128,131,142,1)_60%)] py-6 sm:py-8 px-4 relative">
-        <div className="animate-scroll flex w-max gap-4 sm:gap-6 md:gap-8 lg:gap-11">
-          {designerRoles.map((role, index) => (
-            <div
-              key={index}
-              className="inline-flex items-center justify-center gap-2 sm:gap-3 md:gap-5 min-w-fit"
-            >
-              <Icon
-                src="/image/ornament.png"
-                alt="Ornament"
-                className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"
-              />
-              <Text
-                variant="body"
-                color="white"
-                className="text-lg sm:text-xl md:text-2xl lg:text-3xl whitespace-nowrap"
-              >
-                {role}
-              </Text>
-            </div>
-          ))}
         </div>
       </div>
     </section>

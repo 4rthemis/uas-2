@@ -2,6 +2,7 @@ import React from "react";
 import { Icon } from "../../atoms/Icon/Icon";
 import { useNavigation } from "../../../hooks/useNavigation";
 import { useResponsive } from "../../../hooks/useResponsive";
+import { useScrollDirection } from "../../../hooks/useScrollDirection"; // tambahkan ini
 
 export const Navigation = ({ items = [], className = "" }) => {
   const {
@@ -11,10 +12,20 @@ export const Navigation = ({ items = [], className = "" }) => {
     navigateToSection,
   } = useNavigation();
   const { isMobile } = useResponsive();
+  const showNav = useScrollDirection(); // deteksi arah scroll
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-[999] mx-auto w-full max-w-[1200px] flex items-center justify-between px-4 sm:px-8 md:px-14 py-3 bg-[#ffffffcc] rounded-full border-b-2 border-[#e5e6e8] backdrop-blur-[6.9px] backdrop-brightness-[100%] ${className}`}
+      className={`
+        fixed top-0 left-1/2 -translate-x-1/2 z-[999]
+        w-full max-w-[1200px] mx-auto flex items-center justify-between
+        px-4 sm:px-8 md:px-14 py-3
+        bg-[#ffffffcc] border-b-2 border-[#e5e6e8] rounded-full
+        backdrop-blur-[6.9px] backdrop-brightness-100
+        transition-transform duration-300 ease-in-out
+        ${showNav ? "translate-y-0" : "-translate-y-full"}
+        ${className}
+      `}
     >
       {/* Logo */}
       <Icon

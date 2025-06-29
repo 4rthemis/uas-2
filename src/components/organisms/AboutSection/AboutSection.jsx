@@ -7,7 +7,7 @@ export const AboutSection = ({ personalInfo }) => {
   return (
     <section
       id="about"
-      className="w-full py-8 bg-[#eff0ff] rounded-[24px] sm:rounded-[48px] overflow-hidden relative"
+      className="w-full py-8 bg-[#eff0ff] lg:px-[120px]rounded-[24px] sm:rounded-[48px] overflow-hidden relative"
     >
       <Card className="border-none shadow-none bg-transparent">
         <CardContent className="flex flex-col items-center gap-6 sm:gap-8 px-4 sm:px-8 md:px-16 lg:px-[120px] py-8 sm:py-16">

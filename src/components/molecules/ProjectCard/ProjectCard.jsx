@@ -7,21 +7,22 @@ import { Icon } from "../../atoms/Icon/Icon";
 export const ProjectCard = ({ project, className }) => {
   return (
     <Card
-      className={`p-4 sm:p-6 md:p-8 ${project.bgColor} flex flex-col lg:flex-row w-full items-center justify-center gap-4 sm:gap-5 md:gap-6 rounded-2xl sm:rounded-3xl border-none shadow-none hover:shadow-lg transition-shadow duration-300 ${className}`}
+      className={`p-4 sm:p-6 md:p-8 ${project.bgColor} flex flex-col lg:flex-row items-center lg:items-start justify-between gap-4 sm:gap-5 md:gap-6 rounded-2xl sm:rounded-3xl border-none w-full max-w-7xl mx-auto overflow-hidden ${className}`}
     >
-      <CardContent className="flex flex-col items-start gap-3 sm:gap-4 relative flex-1 p-0 w-full lg:w-auto">
-        <div className="flex flex-col items-start gap-3 sm:gap-4 relative self-stretch w-full">
+      {/* Text Section */}
+      <CardContent className="flex flex-col items-start gap-3 sm:gap-4 p-0 w-full lg:flex-[1]">
+        <div className="flex flex-col items-start gap-3 sm:gap-4 w-full">
           {project.confidential ? (
-            <div className="flex flex-col sm:flex-row items-start gap-2 sm:gap-4 relative self-stretch w-full">
+            <div className="flex flex-col sm:flex-row items-start gap-2 sm:gap-4 w-full">
               <Text
                 variant="caption"
                 className={`${project.categoryColor} whitespace-nowrap`}
               >
                 {project.category}
               </Text>
-              <div className="flex items-center gap-1.5 relative">
-                <div className="relative w-3 h-3 bg-[#eb5f5f] rounded-md" />
-                <Badge className="bg-transparent p-0 [font-family:'Plus_Jakarta_Sans',Helvetica] font-medium text-[#ec5f5f] text-sm sm:text-base">
+              <div className="flex items-center gap-1.5">
+                <div className="w-3 h-3 bg-[#eb5f5f] rounded-md" />
+                <Badge className="bg-transparent p-0 font-medium text-[#ec5f5f] text-sm sm:text-base">
                   Confidential
                 </Badge>
               </div>
@@ -35,26 +36,31 @@ export const ProjectCard = ({ project, className }) => {
             </Text>
           )}
 
-          <Text variant="h4" className={`${project.textColor} self-stretch`}>
+          <Text variant="h4" className={`${project.textColor} w-full`}>
             {project.title}
           </Text>
         </div>
 
-        {project.hasArrow && (
-          <Icon
-            src="/image/arrow.svg"
-            alt="North east"
-            size="xl"
-            className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16"
-          />
+        {project.url && (
+          <a href={project.url} target="_blank" rel="noopener noreferrer">
+            <Icon
+              src="/image/arrow.svg"
+              alt="North east"
+              size="xl"
+              className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16"
+            />
+          </a>
         )}
       </CardContent>
 
-      <Image
-        src={project.image}
-        alt={`${project.title} preview`}
-        className="w-full lg:w-[280px] xl:w-[349px] h-[200px] sm:h-[220px] md:h-[250px] lg:h-[275px] rounded-lg"
-      />
+      {/* Gambar lebih dominan */}
+      <div className="w-full lg:flex-[2]">
+        <Image
+          src={project.image}
+          alt={`${project.title} preview`}
+          className="w-full h-[200px] sm:h-[220px] md:h-[250px] lg:h-[300px] xl:h-[360px] object-cover rounded-lg"
+        />
+      </div>
     </Card>
   );
 };

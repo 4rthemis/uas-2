@@ -4,7 +4,7 @@ export const personalInfo = {
   location: "Indonesia 🇮🇩",
   description:
     "Passionate UI/UX Designer experienced in various mobile and web design projects with expertise in creating visually appealing and user-friendly interfaces.",
-  profileImage: "/public/image/profile.png",
+  profileImage: "/image/profile.png",
   aboutDescription:
     "I'm a UI/UX Designer with 2 years of experience creating user-focused digital solutions. Skilled in UI/UX research, interaction design, and information architecture, I've completed 15+ high-fidelity projects and successfully developed a design system that reduced development time by 40% through consistent and reusable components while accelerated project timelines by 30% delivering impactful digital solutions.",
 };
@@ -23,28 +23,28 @@ export const skills = [
     title: "UI/UX Design",
     description:
       "Craft intuitive and visually appealing user interfaces while focusing on seamless user experiences.",
-    icon: "/public/image/skills.png",
+    icon: "/image/skills.png",
   },
   {
     id: "low-code-dev",
     title: "Low-Code Development",
     description:
       "Utilize low-code platforms to rapidly prototype and develop efficient solutions with minimal coding.",
-    icon: "/public/image/skills.png",
+    icon: "/image/skills.png",
   },
   {
     id: "interaction-design",
     title: "Interaction Design",
     description:
       "Design interactive elements that enhance user engagement and ensure smooth interactions.",
-    icon: "/public/image/skills.png",
+    icon: "/image/skills.png",
   },
   {
     id: "web-design",
     title: "Web Design",
     description:
       "Create responsive and visually striking web experiences tailored to user needs and behavior.",
-    icon: "/public/image/skills.png",
+    icon: "/image/skills.png",
   },
 ];
 
@@ -54,7 +54,7 @@ export const projects = [
     title: "Tanisolusi - Smart Agriculture",
     category: "UI/UX Case Study",
     categoryColor: "text-[#808690]",
-    image: "/public/image/project-1.png",
+    image: "/image/project-1.png",
     hasArrow: true,
     url: "https://dribbble.com/shots/25648521-Tanisolusi-Smart-agriculture-App",
     bgColor: "bg-white",
@@ -66,7 +66,7 @@ export const projects = [
     title: "KATO - Calorie Hydration Tracking",
     category: "Exploration",
     categoryColor: "text-[#808690]",
-    image: "/public/image/project-2.png",
+    image: "/image/project-2.png",
     hasArrow: true,
     url: "https://dribbble.com/shots/25097632-KATO-Easy-Calorie-and-Hydration-Tracking",
     bgColor: "bg-white",
@@ -78,7 +78,7 @@ export const projects = [
     title: "TiketKita - Train Booking",
     category: "Exploration",
     categoryColor: "text-[#808690]",
-    image: "/public/image/project-3.png",
+    image: "/image/project-3.png",
     hasArrow: true,
     url: "https://dribbble.com/shots/25365267-TiketKita-Ticket-Train-Booking-App",
     bgColor: "bg-white",
@@ -90,34 +90,12 @@ export const projects = [
     title: "Gluca - HealthCare App",
     category: "UI/UX Case Study",
     categoryColor: "text-[#808690]",
-    image: "/public/image/project-3.png",
+    image: "/image/project-3.png",
     hasArrow: true,
     url: "https://dribbble.com/shots/25035502-Gluca-Health-App",
     bgColor: "bg-white",
     textColor: "text-[#242528]",
     confidential: false,
-  },
-  {
-    id: "ngiklanmurah",
-    title: "Ngiklanmurah - Ads Hub",
-    category: "Work",
-    categoryColor: "text-[#808690]",
-    image: "/public/image/project-4.png",
-    hasArrow: false,
-    bgColor: "bg-white",
-    textColor: "text-[#242528]",
-    confidential: true,
-  },
-  {
-    id: "dangdut-mania",
-    title: "Dangdut Mania - Music",
-    category: "Work",
-    categoryColor: "text-[#808690]",
-    image: "/public/image/project-5.png",
-    hasArrow: false,
-    bgColor: "bg-white",
-    textColor: "text-[#242528]",
-    confidential: true,
   },
 ];
 
@@ -185,21 +163,21 @@ export const socialLinks = [
     name: "Dribbble",
     icon: "/image/dribbble.png",
     iconClass: "w-[27px] h-[29px] top-[3px] left-[3px]",
-    url: "https://twitter.com",
+    url: "https://dribbble.com/syahruluix",
   },
   {
     id: "instagram",
     name: "Instagram",
     icon: "/image/Instagram.png",
     iconClass: "w-[30px] h-[30px] top-px left-px",
-    url: "https://instagram.com",
+    url: "https://www.instagram.com/syahrul.uix/",
   },
   {
     id: "linkedin",
     name: "LinkedIn",
-    icon: "/image/Linkedin.png",
+    icon: "/image/LinkedIn.png",
     iconClass: "w-[30px] h-[29px] top-px left-px",
-    url: "https://linkedin.com",
+    url: "hhttps://www.linkedin.com/in/syahrul-awaludin/",
   },
 ];
 
