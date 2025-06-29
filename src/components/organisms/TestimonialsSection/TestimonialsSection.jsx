@@ -1,22 +1,27 @@
-import React from 'react';
-import { Text } from '../../atoms/Text/Text';
-import { TestimonialCard } from '../../molecules/TestimonialCard/TestimonialCard';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from '../../ui/carousel';
+import React from "react";
+import { Text } from "../../atoms/Text/Text";
+import { TestimonialCard } from "../../molecules/TestimonialCard/TestimonialCard";
+import { Carousel, CarouselContent, CarouselItem } from "../../ui/carousel";
 
 export const TestimonialsSection = ({ testimonials }) => {
   return (
-    <section id="testimonials" className="flex flex-col items-center gap-8 sm:gap-12 md:gap-16 w-full py-8">
+    <section
+      id="testimonials"
+      className="flex flex-col items-center gap-8 sm:gap-12 md:gap-16 w-full py-8"
+    >
       <div className="flex flex-col items-center gap-6 sm:gap-8 max-w-[1200px] w-full px-4 sm:px-8">
         <Text variant="h2" color="primary" align="center">
           Testimonials
         </Text>
-        
-        <Text variant="body" color="secondary" align="center" className="max-w-[782px] px-4">
-          What others say about me
+
+        <Text
+          variant="body"
+          color="secondary"
+          align="center"
+          className="max-w-[782px] px-4"
+        >
+          Here’s what people say about working with me. Real words from
+          collaborators and clients.
         </Text>
       </div>
 

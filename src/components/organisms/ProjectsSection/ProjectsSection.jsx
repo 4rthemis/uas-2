@@ -43,7 +43,7 @@ export const ProjectsSection = ({ projects }) => {
         className="w-full max-w-[400px] h-12 sm:h-14 md:h-16 bg-[#3d46c9] rounded-[999px] hover:bg-[#3d46c9]/90 transition-colors"
       >
         <a
-          href="hhttps://dribbble.com/syahruluix"
+          href="https://dribbble.com/syahruluix"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center w-full h-full"
