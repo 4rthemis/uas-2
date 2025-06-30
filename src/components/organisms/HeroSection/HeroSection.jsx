@@ -5,24 +5,32 @@ import { Image } from "../../atoms/Image/Image";
 import { Icon } from "../../atoms/Icon/Icon";
 import { Navigation } from "../../molecules/Navigation/Navigation";
 
-export const HeroSection = ({
-  personalInfo,
-  navigationItems,
-  designerRoles,
-}) => {
+export const HeroSection = ({ personalInfo, navigationItems }) => {
   return (
     <section
       id="home"
       data-section-id="home"
+      data-aos="fade-up"
+      data-aos-duration="1000"
       className="flex flex-col items-center justify-center gap-8 md:gap-16 px-4 sm:px-8 md:px-16 lg:px-[120px] pt-24 md:pt-32 relative self-stretch w-full"
     >
       {/* Navigation Bar */}
       <div className="flex flex-col w-full items-center gap-8 md:gap-16 relative flex-[0_0_auto]">
-        <Navigation items={navigationItems} />
+        <div data-aos="fade-down" data-aos-delay="100">
+          <Navigation items={navigationItems} />
+        </div>
 
         {/* Greeting Section */}
-        <div className="flex flex-col sm:flex-row w-full max-w-[782px] items-center justify-between gap-4 sm:gap-8 relative flex-[0_0_auto]">
-          <div className="hidden sm:block relative w-[115px] h-[115px] rotate-180">
+        <div
+          className="flex flex-col sm:flex-row w-full max-w-[782px] items-center justify-between gap-4 sm:gap-8 relative flex-[0_0_auto]"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <div
+            className="hidden sm:block relative w-[115px] h-[115px] rotate-180"
+            data-aos="fade-right"
+            data-aos-delay="300"
+          >
             <Icon
               src="/image/ornament.png"
               alt="Ornament"
@@ -40,7 +48,11 @@ export const HeroSection = ({
             />
           </div>
 
-          <div className="inline-flex flex-col items-center sm:items-start justify-center gap-4 sm:gap-8 relative flex-[0_0_auto]">
+          <div
+            className="inline-flex flex-col items-center sm:items-start justify-center gap-4 sm:gap-8 relative flex-[0_0_auto]"
+            data-aos="zoom-in"
+            data-aos-delay="400"
+          >
             <Image
               src={personalInfo.profileImage}
               alt="Profile"
@@ -64,11 +76,17 @@ export const HeroSection = ({
             src="/image/ornament-2.png"
             alt="Frame"
             className="hidden sm:block w-[120px] h-[120px] sm:w-[150px] sm:h-[150px] md:w-[180px] md:h-[180px]"
+            data-aos="fade-left"
+            data-aos-delay="500"
           />
         </div>
 
         {/* Main Content */}
-        <div className="flex flex-col items-center gap-8 sm:gap-12 px-4 sm:px-8 md:px-16 lg:px-[120px] py-0 relative self-stretch w-full flex-[0_0_auto]">
+        <div
+          className="flex flex-col items-center gap-8 sm:gap-12 px-4 sm:px-8 md:px-16 lg:px-[120px] py-0 relative self-stretch w-full flex-[0_0_auto]"
+          data-aos="fade-up"
+          data-aos-delay="600"
+        >
           <Text variant="h1" color="primary" align="center" className="w-full">
             <span className="font-semibold">
               {personalInfo.title}
@@ -104,3 +122,5 @@ export const HeroSection = ({
     </section>
   );
 };
+
+export default HeroSection;

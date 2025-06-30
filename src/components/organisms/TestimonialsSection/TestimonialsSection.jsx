@@ -1,7 +1,5 @@
-import React from "react";
 import { Text } from "../../atoms/Text/Text";
 import { TestimonialCard } from "../../molecules/TestimonialCard/TestimonialCard";
-import { Carousel, CarouselContent, CarouselItem } from "../../ui/carousel";
 
 export const TestimonialsSection = ({ testimonials }) => {
   return (
@@ -9,34 +7,37 @@ export const TestimonialsSection = ({ testimonials }) => {
       id="testimonials"
       className="flex flex-col items-center gap-8 sm:gap-12 md:gap-16 w-full py-8"
     >
-      <div className="flex flex-col items-center gap-6 sm:gap-8 max-w-[1200px] w-full px-4 sm:px-8">
+      {/* Heading */}
+      <div className="flex flex-col items-center gap-6 sm:gap-8 px-4 sm:px-8">
         <Text variant="h2" color="primary" align="center">
           Testimonials
         </Text>
-
         <Text
           variant="body"
           color="secondary"
           align="center"
-          className="max-w-[782px] px-4"
+          className="max-w-[782px]"
         >
           Here’s what people say about working with me. Real words from
           collaborators and clients.
         </Text>
       </div>
 
-      <Carousel className="w-full max-w-[1440px]">
-        <CarouselContent className="px-4 sm:px-8">
-          {testimonials.map((testimonial) => (
-            <CarouselItem
-              key={testimonial.id}
-              className="basis-full sm:basis-1/1 md:basis-1/2 pl-4"
+      {/* Marquee Animation with Pause on Hover */}
+      <div className="w-full overflow-hidden">
+        <div className="flex w-max animate-scroll hover:[animation-play-state:paused] gap-8 sm:gap-12 md:gap-16 px-4 sm:px-8">
+          {[...testimonials, ...testimonials].map((testimonial, index) => (
+            <div
+              key={index}
+              className="flex-shrink-0 w-[320px] sm:w-[360px] md:w-[420px]"
             >
               <TestimonialCard testimonial={testimonial} />
-            </CarouselItem>
+            </div>
           ))}
-        </CarouselContent>
-      </Carousel>
+        </div>
+      </div>
     </section>
   );
 };
+
+export default TestimonialsSection;

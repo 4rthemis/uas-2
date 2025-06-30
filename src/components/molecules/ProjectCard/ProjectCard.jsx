@@ -7,7 +7,19 @@ import { Icon } from "../../atoms/Icon/Icon";
 export const ProjectCard = ({ project, className }) => {
   return (
     <Card
-      className={`p-4 sm:p-6 md:p-8 ${project.bgColor} flex flex-col lg:flex-row items-center lg:items-start justify-between gap-4 sm:gap-5 md:gap-6 rounded-2xl sm:rounded-3xl border-none w-full max-w-7xl mx-auto overflow-hidden ${className}`}
+      className={`group transition-colors duration-300 
+        ${project.bgColor} 
+        hover:bg-[#667eea] 
+        hover:text-white 
+        p-4 sm:p-6 md:p-8 
+        flex flex-col lg:flex-row items-center lg:items-start justify-between 
+        gap-4 sm:gap-5 md:gap-6 
+        rounded-2xl sm:rounded-3xl 
+        border-none 
+        w-full max-w-7xl mx-auto 
+        overflow-hidden 
+        ${className}
+      `}
     >
       {/* Text Section */}
       <CardContent className="flex flex-col items-start gap-3 sm:gap-4 p-0 w-full lg:flex-[1]">
@@ -16,7 +28,7 @@ export const ProjectCard = ({ project, className }) => {
             <div className="flex flex-col sm:flex-row items-start gap-2 sm:gap-4 w-full">
               <Text
                 variant="caption"
-                className={`${project.categoryColor} whitespace-nowrap`}
+                className={`whitespace-nowrap transition-colors duration-300 group-hover:text-white ${project.categoryColor}`}
               >
                 {project.category}
               </Text>
@@ -30,13 +42,16 @@ export const ProjectCard = ({ project, className }) => {
           ) : (
             <Text
               variant="caption"
-              className={`${project.categoryColor} w-full`}
+              className={`transition-colors duration-300 group-hover:text-white ${project.categoryColor}`}
             >
               {project.category}
             </Text>
           )}
 
-          <Text variant="h4" className={`${project.textColor} w-full`}>
+          <Text
+            variant="h4"
+            className={`transition-colors duration-300 group-hover:text-white ${project.textColor}`}
+          >
             {project.title}
           </Text>
         </div>
@@ -47,13 +62,13 @@ export const ProjectCard = ({ project, className }) => {
               src="/image/arrow.svg"
               alt="North east"
               size="xl"
-              className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16"
+              className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 group-hover:brightness-0 group-hover:invert transition duration-300"
             />
           </a>
         )}
       </CardContent>
 
-      {/* Gambar lebih dominan */}
+      {/* Image */}
       <div className="w-full lg:flex-[2]">
         <Image
           src={project.image}
@@ -64,3 +79,5 @@ export const ProjectCard = ({ project, className }) => {
     </Card>
   );
 };
+
+export default ProjectCard;
