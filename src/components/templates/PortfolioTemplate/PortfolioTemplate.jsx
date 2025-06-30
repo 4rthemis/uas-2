@@ -20,22 +20,35 @@ export const PortfolioTemplate = () => {
 
   return (
     <div className="flex flex-col w-full items-center justify-center bg-[#f6f6f6] min-h-screen">
-      <div className="flex flex-col w-full items-center justify-center">
+      {/* Hero Section - Full width with internal margins */}
+      <div className="w-full">
         <HeroSection
           personalInfo={personalInfo}
           navigationItems={navigationItems}
         />
       </div>
+
+      {/* Ticker - Full width */}
       <Ticker items={designerRoles} />
-      <div className="flex flex-col w-full  items-center justify-center">
-        <div className="w-full px-4 sm:px-8 md:px-16 lg:px-[120px] space-y-16 sm:space-y-24 md:space-y-32">
+
+      {/* Main Content Sections - Consistent container with margins */}
+      <div className="w-full">
+        <div className="max-w-screen-2xl mx-auto px-4 sm:px-8 md:px-16 lg:px-[120px] space-y-20 sm:space-y-24 md:space-y-28 lg:space-y-32">
           <AboutSection personalInfo={personalInfo} />
           <SkillsSection skills={skills} />
           <ProjectsSection projects={projects} />
-          <TestimonialsSection testimonials={testimonials} />
         </div>
       </div>
-      <FooterSection socialLinks={socialLinks} />
+
+      {/* Testimonials - Full width */}
+      <div className="w-full mt-20 sm:mt-24 md:mt-28 lg:mt-32">
+        <TestimonialsSection testimonials={testimonials} />
+      </div>
+
+      {/* Footer - Full width */}
+      <div className="w-full mt-20 sm:mt-24 md:mt-28 lg:mt-32">
+        <FooterSection socialLinks={socialLinks} />
+      </div>
     </div>
   );
 };

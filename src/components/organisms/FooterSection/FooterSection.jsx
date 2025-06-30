@@ -7,10 +7,10 @@ export const FooterSection = ({ socialLinks }) => {
   return (
     <section
       id="footer"
-      className="w-full bg-white py-8 flex flex-col items-center"
+      className="w-full bg-white py-8 sm:py-12 md:py-16"
     >
-      <div className="w-full">
-        <div className="mx-auto max-w-screen-xl px-4 sm:px-8 flex flex-col items-center gap-6 sm:gap-8">
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-8 md:px-16 lg:px-[120px]">
+        <div className="flex flex-col items-center gap-6 sm:gap-8">
           {/* Header Section */}
           <div className="flex flex-col items-center gap-8 sm:gap-12">
             <div className="flex flex-col items-center gap-4 sm:gap-6">
@@ -18,7 +18,6 @@ export const FooterSection = ({ socialLinks }) => {
                 variant="h2"
                 color="primary"
                 align="center"
-                className="px-4"
               >
                 Ready to Craft your Big Ideas?
               </Text>
@@ -27,7 +26,7 @@ export const FooterSection = ({ socialLinks }) => {
                 variant="body"
                 color="secondary"
                 align="center"
-                className="text-lg sm:text-xl md:text-2xl px-4"
+                className="text-lg sm:text-xl md:text-2xl"
               >
                 Let&#39;s bring your design vision to life.
               </Text>

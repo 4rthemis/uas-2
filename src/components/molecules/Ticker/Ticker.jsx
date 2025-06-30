@@ -4,7 +4,7 @@ import { Text } from "../../atoms/Text/Text";
 
 export const Ticker = ({ items = [] }) => {
   return (
-    <div className="w-full overflow-x-hidden bg-[linear-gradient(356deg,_#242528_0.28%,_#80838E_241.04%)] py-6 sm:py-8 px-4 relative my-20">
+    <div className="w-full overflow-x-hidden bg-[linear-gradient(356deg,_#242528_0.28%,_#80838E_241.04%)] py-6 sm:py-8 px-4 relative my-16 sm:my-20 md:my-24 lg:my-28">
       <div className="relative w-full">
         <div className="animate-scroll flex w-max gap-8 sm:gap-12 md:gap-16">
           {items.concat(items).map((item, index) => (

@@ -7,10 +7,10 @@ export const AboutSection = ({ personalInfo }) => {
   return (
     <section
       id="about"
-      className="w-full py-8 bg-[#eff0ff] lg:px-[120px]rounded-[24px] sm:rounded-[48px] overflow-hidden relative"
+      className="w-full bg-[#eff0ff] rounded-[24px] sm:rounded-[48px] overflow-hidden relative"
     >
       <Card className="border-none shadow-none bg-transparent">
-        <CardContent className="flex flex-col items-center gap-6 sm:gap-8 px-4 sm:px-8 md:px-16 lg:px-[120px] py-8 sm:py-16">
+        <CardContent className="flex flex-col items-center gap-6 sm:gap-8 px-6 sm:px-8 md:px-12 lg:px-16 py-8 sm:py-12 md:py-16">
           <Text variant="h2" color="primary" align="center">
             About
           </Text>
@@ -19,7 +19,7 @@ export const AboutSection = ({ personalInfo }) => {
             variant="body"
             color="primary"
             align="center"
-            className="max-w-[782px] px-4"
+            className="max-w-[782px]"
           >
             <br />
             I&apos;m a{" "}
@@ -31,7 +31,7 @@ export const AboutSection = ({ personalInfo }) => {
         </CardContent>
       </Card>
 
-      <div className="flex justify-center mt-4 mb-8 sm:mb-16">
+      <div className="flex justify-center mt-4 mb-8 sm:mb-12 md:mb-16">
         <Image
           src="/image/about.png"
           alt="Profile illustration"
