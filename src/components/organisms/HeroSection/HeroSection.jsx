@@ -10,9 +10,9 @@ export const HeroSection = ({ personalInfo, navigationItems }) => {
     <section
       id="home"
       data-section-id="home"
-      className="w-full pt-24 md:pt-32 pb-8 md:pb-16"
+      className="w-full pt-24 md:pt-32 pb-8 md:pb-16 min-h-screen flex items-center"
     >
-      <div className="max-w-screen-2xl mx-auto px-4 sm:px-8 md:px-16 lg:px-[120px]">
+      <div className="max-w-screen-2xl mx-auto px-4 sm:px-8 md:px-16 lg:px-[120px] w-full">
         <div className="flex flex-col items-center justify-center gap-8 md:gap-16">
           {/* Navigation Bar */}
           <div className="flex flex-col w-full items-center gap-8 md:gap-16 relative flex-[0_0_auto]">

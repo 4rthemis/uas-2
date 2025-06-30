@@ -2,7 +2,7 @@ import React from "react";
 import { Icon } from "../../atoms/Icon/Icon";
 import { useNavigation } from "../../../hooks/useNavigation";
 import { useResponsive } from "../../../hooks/useResponsive";
-import { useScrollDirection } from "../../../hooks/useScrollDirection"; // tambahkan ini
+import { useScrollDirection } from "../../../hooks/useScrollDirection";
 
 export const Navigation = ({ items = [], className = "" }) => {
   const {
@@ -12,7 +12,7 @@ export const Navigation = ({ items = [], className = "" }) => {
     navigateToSection,
   } = useNavigation();
   const { isMobile } = useResponsive();
-  const showNav = useScrollDirection(); // deteksi arah scroll
+  const showNav = useScrollDirection();
 
   return (
     <nav
@@ -40,23 +40,43 @@ export const Navigation = ({ items = [], className = "" }) => {
           <button
             key={item.id}
             onClick={() => navigateToSection(item.id)}
-            className={`relative font-medium text-xl whitespace-nowrap hover:text-[#3d46c9] transition-colors ${
-              activeSection === item.id ? "text-[#3d46c9]" : "text-[#242528]"
-            }`}
+            className={`
+              relative font-medium text-xl whitespace-nowrap 
+              transition-all duration-300 ease-in-out
+              hover:text-[#3d46c9] hover:scale-105
+              ${
+                activeSection === item.id
+                  ? "text-[#3d46c9] scale-105"
+                  : "text-[#242528]"
+              }
+            `}
           >
             {item.label}
+            {/* Active indicator */}
+            <span
+              className={`
+                absolute -bottom-2 left-1/2 -translate-x-1/2
+                w-2 h-2 bg-[#3d46c9] rounded-full
+                transition-all duration-300 ease-in-out
+                ${
+                  activeSection === item.id
+                    ? "opacity-100 scale-100"
+                    : "opacity-0 scale-0"
+                }
+              `}
+            />
           </button>
         ))}
       </div>
 
       {/* Mobile Menu Button */}
       <button
-        className="md:hidden p-2"
+        className="md:hidden p-2 transition-transform duration-200 hover:scale-110"
         onClick={toggleMobileMenu}
         aria-label="Toggle mobile menu"
       >
         <svg
-          className="w-6 h-6"
+          className="w-6 h-6 transition-transform duration-300"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -76,22 +96,31 @@ export const Navigation = ({ items = [], className = "" }) => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && isMobile && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-lg shadow-xl border z-50">
+        <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-lg shadow-xl border z-50 animate-in slide-in-from-top-2 duration-200">
           <div className="flex flex-col p-2 gap-1">
             {items.map((item) => (
               <button
                 key={item.id}
                 onClick={() => {
                   navigateToSection(item.id);
-                  toggleMobileMenu(); // Menutup menu setelah klik
+                  toggleMobileMenu();
                 }}
-                className={`text-left p-2 rounded hover:bg-gray-100 transition-colors text-sm ${
-                  activeSection === item.id
-                    ? "text-[#3d46c9] bg-gray-50"
-                    : "text-[#242528]"
-                }`}
+                className={`
+                  text-left p-3 rounded-lg transition-all duration-200 text-sm
+                  hover:bg-gray-100 hover:scale-[1.02]
+                  ${
+                    activeSection === item.id
+                      ? "text-[#3d46c9] bg-[#eff0ff] font-medium"
+                      : "text-[#242528]"
+                  }
+                `}
               >
-                {item.label}
+                <div className="flex items-center justify-between">
+                  {item.label}
+                  {activeSection === item.id && (
+                    <div className="w-2 h-2 bg-[#3d46c9] rounded-full" />
+                  )}
+                </div>
               </button>
             ))}
           </div>
