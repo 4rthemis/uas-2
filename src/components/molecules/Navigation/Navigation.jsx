@@ -52,19 +52,6 @@ export const Navigation = ({ items = [], className = "" }) => {
             `}
           >
             {item.label}
-            {/* Active indicator */}
-            <span
-              className={`
-                absolute -bottom-2 left-1/2 -translate-x-1/2
-                w-2 h-2 bg-[#3d46c9] rounded-full
-                transition-all duration-300 ease-in-out
-                ${
-                  activeSection === item.id
-                    ? "opacity-100 scale-100"
-                    : "opacity-0 scale-0"
-                }
-              `}
-            />
           </button>
         ))}
       </div>
@@ -117,9 +104,6 @@ export const Navigation = ({ items = [], className = "" }) => {
               >
                 <div className="flex items-center justify-between">
                   {item.label}
-                  {activeSection === item.id && (
-                    <div className="w-2 h-2 bg-[#3d46c9] rounded-full" />
-                  )}
                 </div>
               </button>
             ))}
